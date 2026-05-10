@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartes Électroniques - SQLite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Gestion des Cartes (SQLite)</h1>
+
+        <!-- ADD -->
+        <div class="card">
+            <h2>➕ addCard</h2>
+            <input type="number" id="addId" placeholder="ID">
+            <input type="text" id="addName" placeholder="Nom">
+            <input type="text" id="addDesc" placeholder="Description">
+            <input type="number" id="addPrice" placeholder="Prix (DT)">
+            <input type="number" id="addStock" placeholder="Stock">
+            <button onclick="addCard()">addcard</button>
+        </div>
+
+        <!-- LIST & FETCH -->
+        <div class="card">
+            <h2>📋 Liste des cartes(Fetch)</h2>
+            <button onclick="fetchCards()">Fetch</button>
+            <table>
+                <thead><tr><th>ID</th><th>Nom</th><th>Description</th><th>Prix</th><th>Stock</th><th>Statut</th><th>Actions</th></tr></thead>
+                <tbody id="cardsBody"><tr><td colspan="7">Chargement...</td></tr></tbody>
+            </table>
+        </div>
+
+        <!-- UPDATE -->
+        <div class="card">
+            <h2>✏️ updateCard</h2>
+            <input type="number" id="updateId" placeholder="ID">
+            <input type="text" id="updateName" placeholder="Nouveau nom">
+            <input type="text" id="updateDesc" placeholder="Nouvelle description">
+            <input type="number" id="updatePrice" placeholder="Nouveau prix">
+            <input type="number" id="updateStock" placeholder="Nouveau stock">
+            <button class="btn-update" onclick="updateCard()">updateCard</button>
+        </div>
+
+        <!-- DELETE -->
+        <div class="card">
+            <h2>🗑️ delete</h2>
+            <input type="number" id="deleteId" placeholder="ID">
+            <button class="btn-delete" onclick="deleteCardById()">deleteCardById</button>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
